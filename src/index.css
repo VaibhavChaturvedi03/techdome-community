@@ -59,6 +59,10 @@ All colors MUST be HSL.
     font-weight: 700;
     letter-spacing: -0.02em;
   }
+
+  section {
+    @apply relative;
+  }
 }
 
 @layer utilities {
@@ -103,10 +107,106 @@ All colors MUST be HSL.
   50% { opacity: 0.6; }
 }
 
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+    opacity: 0.4;
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+    opacity: 0.3;
+  }
+}
+
+@keyframes line-draw {
+  0% {
+    stroke-dashoffset: 1000;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.2;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
 .animate-pulse-glow {
   animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animate-line-draw {
+  stroke-dasharray: 1000;
+  animation: line-draw 6s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Hide Spline credits */
+spline-viewer::part(credits) {
+  display: none !important;
+}
+
+spline-viewer::part(logo) {
+  display: none !important;
+}
+
+/* Hide all overlay elements */
+spline-viewer::part(overlay) {
+  display: none !important;
+}
+
+/* Hide branding and UI */
+[class*="spline"],
+[id*="spline"],
+[class*="credit"],
+[class*="logo"],
+[class*="built"],
+.spline-credits,
+.spline-logo,
+.built-with-spline {
+  display: none !important;
+}
+
+/* Hide using shadow DOM piercing */
+spline-viewer {
+  --spline-credits-display: none !important;
+}
+
+/* Force hide any remaining elements */
+spline-viewer svg[class*="credit"],
+spline-viewer svg[class*="logo"],
+spline-viewer div[class*="credit"],
+spline-viewer div[class*="logo"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
 }

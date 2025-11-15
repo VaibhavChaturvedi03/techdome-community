@@ -10,67 +10,17 @@ const Events = () => {
     {
       id: 1,
       title: "DarkCode Rising - Hackathon 2024",
-      date: "December 15-17, 2024",
-      time: "48 Hours",
-      location: "TechDome HQ",
-      attendees: 200,
+      date: "January 18 , 2026",
+      time: "10 Hours",
+      location: "TBA",
       description: "Join us for our biggest hackathon of the year! Code, collaborate, and compete for amazing prizes.",
       featured: true,
-      image: "💻",
-    },
-    {
-      id: 2,
-      title: "AI & Machine Learning Workshop",
-      date: "November 25, 2024",
-      time: "2:00 PM - 6:00 PM",
-      location: "Online",
-      attendees: 150,
-      description: "Hands-on workshop covering the fundamentals of AI and ML with practical projects.",
-      featured: false,
-      image: "🤖",
-    },
-    {
-      id: 3,
-      title: "Web3 & Blockchain Meetup",
-      date: "December 5, 2024",
-      time: "6:00 PM - 9:00 PM",
-      location: "Innovation Hub",
-      attendees: 80,
-      description: "Explore the future of decentralized technology with industry experts.",
-      featured: false,
-      image: "⛓️",
-    },
+      image: "/hack-logo.png",
+    }
   ];
 
   const pastEvents = [
-    {
-      id: 1,
-      title: "TechTalks: Cloud Computing",
-      date: "October 20, 2024",
-      attendees: 120,
-      image: "☁️",
-    },
-    {
-      id: 2,
-      title: "Cybersecurity Workshop",
-      date: "September 15, 2024",
-      attendees: 95,
-      image: "🔒",
-    },
-    {
-      id: 3,
-      title: "Mobile App Dev Bootcamp",
-      date: "August 10, 2024",
-      attendees: 180,
-      image: "📱",
-    },
-    {
-      id: 4,
-      title: "Data Science Summit",
-      date: "July 5, 2024",
-      attendees: 200,
-      image: "📊",
-    },
+    
   ];
 
   return (
@@ -108,7 +58,13 @@ const Events = () => {
                   }`}
                 >
                   <div className="grid md:grid-cols-[auto_1fr_auto] gap-6 items-start">
-                    <div className="text-6xl animate-float">{event.image}</div>
+                    <div className="w-24 h-24 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                      <img 
+                        src={event.image}
+                        alt={event.title}
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
                     
                     <div className="space-y-4">
                       <div className="flex items-start justify-between">
@@ -141,8 +97,7 @@ const Events = () => {
                           <span>{event.location}</span>
                         </div>
                         <div className="flex items-center space-x-2 text-muted-foreground">
-                          <Users className="h-4 w-4" />
-                          <span>{event.attendees} Attendees</span>
+                          
                         </div>
                       </div>
                     </div>
@@ -178,7 +133,6 @@ const Events = () => {
                   <p className="text-sm text-muted-foreground mb-3">{event.date}</p>
                   <div className="flex items-center justify-center space-x-2 text-xs text-muted-foreground">
                     <Users className="h-3 w-3" />
-                    <span>{event.attendees} Attended</span>
                   </div>
                 </div>
               ))}

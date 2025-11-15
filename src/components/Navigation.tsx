@@ -1,10 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Logo from "@/components/Logo";
 
 const Navigation = () => {
-  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
@@ -13,31 +13,35 @@ const Navigation = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
-
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-lg">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <span className="text-xl font-bold">TD</span>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm">
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <Link to="/" className="flex items-center hover:opacity-80 transition-opacity flex-shrink-0">
+            <div className="w-10 h-10 rounded-lg overflow-hidden">
+              <img 
+                src="/logo.png" 
+                alt="TechDome Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
-            <span className="text-xl font-bold">TechDome</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center space-x-16 absolute left-1/2 transform -translate-x-1/2">
             {navItems.map((item) => (
-              <Link
+              <NavLink
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(item.path) ? "text-primary" : "text-muted-foreground"
-                }`}
+                className={({ isActive }) =>
+                  `text-sm font-medium transition-colors ${
+                    isActive ? "text-primary" : "text-foreground hover:text-primary"
+                  }`
+                }
               >
                 {item.name}
-              </Link>
+              </NavLink>
             ))}
           </div>
 
@@ -53,18 +57,20 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 space-y-4 border-t border-border/50">
+          <div className="md:hidden py-4 space-y-4">
             {navItems.map((item) => (
-              <Link
+              <NavLink
                 key={item.path}
                 to={item.path}
-                className={`block text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(item.path) ? "text-primary" : "text-muted-foreground"
-                }`}
+                className={({ isActive }) =>
+                  `block text-sm font-medium transition-colors ${
+                    isActive ? "text-primary" : "text-foreground hover:text-primary"
+                  }`
+                }
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
-              </Link>
+              </NavLink>
             ))}
           </div>
         )}

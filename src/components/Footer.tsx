@@ -1,67 +1,43 @@
-import { Github, Linkedin, Twitter, Mail, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Facebook, Twitter, Mail, Instagram, Linkedin, Github } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="relative border-t border-border mt-20">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-xl font-bold">TD</span>
-              </div>
-              <span className="text-xl font-bold">TechDome</span>
+    <footer className="relative bg-background/40 backdrop-blur-sm border-t border-border mt-20">
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Brand */}
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg overflow-hidden flex-shrink-0">
+              <img 
+                src="/logo.png" 
+                alt="TechDome Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
-            <p className="text-sm text-muted-foreground">
-              Building the future of technology together.
-            </p>
+            <span className="text-sm font-bold text-gradient">TechDome</span>
           </div>
 
-          <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/" className="hover:text-primary transition-colors">Home</Link></li>
-              <li><a href="/#about" className="hover:text-primary transition-colors">About</a></li>
-              <li><Link to="/events" className="hover:text-primary transition-colors">Events</Link></li>
-              <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
-            </ul>
+          {/* Social Icons */}
+          <div className="flex items-center gap-3">
+            <a href="https://x.com/Techdome226490?t=GVs3NewJUtEpTQxMKG9eeg&s=09" target="_blank" className="p-1.5 rounded-full hover:opacity-80 transition-opacity text-foreground">
+              <Twitter size={14} />
+            </a>
+            <a href="https://www.instagram.com/techdome.official?igsh=MTJ0Zmdzd3lhbHA2YQ==" target="_blank" className="p-1.5 rounded-full hover:opacity-80 transition-opacity text-foreground">
+              <Instagram size={14} />
+            </a>
+            <a href="https://www.linkedin.com/company/techdome-dev/about/" target="_blank" className="p-1.5 rounded-full hover:opacity-80 transition-opacity text-foreground">
+              <Linkedin size={14} />
+            </a>
+            <a href="https://github.com/Tech-Dome" target="_blank" className="p-1.5 rounded-full hover:opacity-80 transition-opacity text-foreground">
+              <Github size={14} />
+            </a>
           </div>
 
-          <div>
-            <h3 className="font-semibold mb-4">Community</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">Discord</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Slack</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Newsletter</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
-            </ul>
+          {/* Copyright */}
+          <div className="text-xs text-muted-foreground">
+            <p>&copy; 2025 TechDome. All rights reserved.</p>
           </div>
-
-          <div>
-            <h3 className="font-semibold mb-4">Connect</h3>
-            <div className="flex space-x-3">
-              <a href="#" className="p-2 rounded-lg bg-muted hover:bg-primary/20 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="p-2 rounded-lg bg-muted hover:bg-primary/20 transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="p-2 rounded-lg bg-muted hover:bg-primary/20 transition-colors">
-                <Github className="h-5 w-5" />
-              </a>
-              <a href="#" className="p-2 rounded-lg bg-muted hover:bg-primary/20 transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="p-2 rounded-lg bg-muted hover:bg-primary/20 transition-colors">
-                <Mail className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>&copy; 2024 TechDome. All rights reserved.</p>
         </div>
       </div>
     </footer>

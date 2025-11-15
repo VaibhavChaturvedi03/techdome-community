@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Instagram, Github, MessageSquare } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import GridBackground from "@/components/GridBackground";
 import Footer from "@/components/Footer";
@@ -150,9 +150,14 @@ const Contact = () => {
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Email Us</h3>
-                    <p className="text-muted-foreground">contact@techdome.com</p>
-                    <p className="text-muted-foreground">events@techdome.com</p>
+                    <h3 className="text-lg font-semibold mb-2">Email</h3>
+                    <p className="text-muted-foreground mb-2">techdome.community@gmail.com</p>
+                    <a 
+                      href="mailto:contact@techdome.community@gmail.com" 
+                      className="inline-block mt-4 text-primary hover:text-primary/80 font-medium text-sm"
+                    >
+                      Send us an email →
+                    </a>
                   </div>
                 </div>
               </div>
@@ -160,12 +165,19 @@ const Contact = () => {
               <div className="p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:card-glow">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-secondary" />
+                    <Instagram className="h-6 w-6 text-secondary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Call Us</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                    <p className="text-muted-foreground">Mon-Fri 9am-6pm EST</p>
+                    <h3 className="text-lg font-semibold mb-2">Instagram</h3>
+                    <p className="text-muted-foreground mb-2">@techdome.official</p>
+                    <a 
+                      href="https://www.instagram.com/techdome.official?igsh=MTJ0Zmdzd3lhbHA2YQ==" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block text-secondary hover:text-secondary/80 font-medium text-sm"
+                    >
+                      Follow us →
+                    </a>
                   </div>
                 </div>
               </div>
@@ -173,33 +185,46 @@ const Contact = () => {
               <div className="p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:card-glow">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-accent" />
+                    <svg className="h-6 w-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M23.953 4.57a10 10 0 002.856-3.515a9.953 9.953 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827a4.996 4.996 0 01-2.212.085a4.936 4.936 0 004.604 3.417a9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                    </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Visit Us</h3>
-                    <p className="text-muted-foreground">123 Innovation Drive</p>
-                    <p className="text-muted-foreground">Tech City, TC 12345</p>
+                    <h3 className="text-lg font-semibold mb-2">X (Twitter)</h3>
+                    <p className="text-muted-foreground mb-2">@Techdome226490
+</p>
+                    <a 
+                      href="https://x.com/Techdome226490?t=GVs3NewJUtEpTQxMKG9eeg&s=09" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block text-accent hover:text-accent/80 font-medium text-sm"
+                    >
+                      Follow us →
+                    </a>
                   </div>
                 </div>
               </div>
 
-              <div className="p-8 rounded-xl bg-gradient-to-br from-primary/10 via-secondary/5 to-transparent border border-primary/30">
-                <h3 className="text-lg font-semibold mb-4">Office Hours</h3>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Monday - Friday</span>
-                    <span className="font-medium">9:00 AM - 6:00 PM</span>
+              <div className="p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:card-glow">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                    <MessageSquare className="h-6 w-6 text-purple-500" />
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Saturday</span>
-                    <span className="font-medium">10:00 AM - 4:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Sunday</span>
-                    <span className="font-medium">Closed</span>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Discord</h3>
+                    <p className="text-muted-foreground mb-2">Join our community server</p>
+                    <a 
+                      href="https://discord.gg/dm8bAhGc" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block text-purple-500 hover:text-purple-400 font-medium text-sm"
+                    >
+                      Join Discord →
+                    </a>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>

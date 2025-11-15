@@ -1,30 +1,13 @@
 import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const WorkSection = () => {
   const projects = [
     {
-      title: "AI Workshop Series",
-      description: "Comprehensive machine learning and AI workshops for beginners to advanced.",
-      category: "Education",
-      image: "🤖",
-    },
-    {
-      title: "Hackathon 2024",
-      description: "Annual 48-hour coding marathon bringing together brilliant minds.",
+      title: "DarkCode rising",
+      description: " 10-hour coding marathon bringing together brilliant minds.",
       category: "Competition",
-      image: "💻",
-    },
-    {
-      title: "Open Source Initiative",
-      description: "Contributing to open-source projects and building community tools.",
-      category: "Development",
-      image: "🔧",
-    },
-    {
-      title: "Tech Talks",
-      description: "Monthly speaker series featuring industry leaders and innovators.",
-      category: "Networking",
-      image: "🎤",
+      image: "/hack-logo.png",
     },
   ];
 
@@ -47,7 +30,13 @@ const WorkSection = () => {
               className="group p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:card-glow cursor-pointer"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="text-5xl">{project.image}</div>
+                <div className="w-20 h-20 rounded-lg bg-muted overflow-hidden flex-shrink-0">
+                  <img 
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
                 <span className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
                   {project.category}
                 </span>
@@ -56,9 +45,9 @@ const WorkSection = () => {
                 {project.title}
               </h3>
               <p className="text-muted-foreground mb-4">{project.description}</p>
-              <div className="flex items-center text-primary text-sm font-medium group-hover:translate-x-2 transition-transform">
+              <Link to="/events" className="inline-flex items-center text-primary text-sm font-medium group-hover:translate-x-2 transition-transform">
                 Learn More <ExternalLink className="ml-2 h-4 w-4" />
-              </div>
+              </Link>
             </div>
           ))}
         </div>

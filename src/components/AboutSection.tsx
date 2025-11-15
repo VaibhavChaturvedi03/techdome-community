@@ -32,7 +32,7 @@ const AboutSection = () => {
             About <span className="text-gradient">TechDome</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A thriving community where technology meets passion, innovation meets collaboration.
+            TechDome is a community for students and early-career technologists who learn by building. We run learning sessions, hackathons, mentorship circles, and project squads that help members ship practical projects and grow together. Whether you're just starting your journey or looking to level up, TechDome provides the support, resources, and connections to accelerate your growth.
           </p>
         </div>
 
